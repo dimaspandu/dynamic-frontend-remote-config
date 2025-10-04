@@ -10,6 +10,30 @@ Instead of hardcoding configuration values, the app fetches a JSON config file f
 - Supports **JWT-based authentication helpers** (`jwt-decode`, `jwt-encode`)  
 - Docker-ready for production deployments  
 
+## Live Demo
+
+You can try out the live demo of the remote configuration feature:
+
+- [Live demo of the configuration](https://dynamic-frontend-remote-config.netlify.app/)
+- [Demo with disabled feature](https://dynamic-frontend-remote-config.netlify.app/subject-access-request)
+
+These links demonstrate the dynamic configuration in action, including the features controlled by remote configuration settings.
+
+## Configuration and JWT Decoding
+
+The configuration fetched by the app (either editable by cookies or not) can be observed directly in the browser's **Network** tab under the request for `config`. You can also inspect the cookies used for storing remote configuration values.
+
+### Steps to Decode JWT:
+1. Open your browser's Developer Tools (e.g., right-click → "Inspect" → go to the **Application** or **Network** tab).
+2. Look for the `config` request or inspect cookies.
+3. Copy the JWT string (it will look like a long string of characters).
+4. Visit [JWT.io](https://jwt.io/) and paste the copied token into the "Encoded" field.
+5. JWT.io will automatically decode the JWT token and display its payload for inspection.
+
+![JWT decoding demo 1](./doc/screenshot-1.png)
+![JWT decoding demo 2](./doc/screenshot-2.png)
+![JWT decoding demo 3](./doc/screenshot-3.png)
+
 ## Development
 
 Generate a local remote config file and start the dev server:
