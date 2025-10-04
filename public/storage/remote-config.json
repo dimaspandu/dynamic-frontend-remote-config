@@ -1,0 +1,503 @@
+{
+  "PAGE_ACCESS": {
+    "ticket_code": "F20-10001",
+    "enabled": true,
+    "editable_with_cookies": false,
+    "data": {
+      "canAccessRegistrationPage": true,
+      "canAccessDashboard": false
+    },
+    "data_alter": {}
+  },
+  "DROPDOWN_OPTIONS": {
+    "ticket_code": "F20-10002",
+    "enabled": true,
+    "editable_with_cookies": false,
+    "data": {
+      "paymentMethods": [
+        {
+          "value": "",
+          "label": "Select Payment Method"
+        },
+        {
+          "value": "bank_transfer",
+          "label": "Bank Transfer"
+        },
+        {
+          "value": "credit_card",
+          "label": "Credit Card"
+        },
+        {
+          "value": "e_wallet",
+          "label": "E-Wallet"
+        }
+      ],
+      "defaultPayment": "bank_transfer"
+    },
+    "data_alter": {}
+  },
+  "UI_MESSAGES": {
+    "ticket_code": "F20-10003",
+    "enabled": true,
+    "editable_with_cookies": false,
+    "data": {
+      "welcomeMessage": "Welcome to the Self-Registration System",
+      "registrationClosedMessage": "Registration is temporarily closed, please check back later.",
+      "successMessage": "Your registration has been submitted successfully.",
+      "errorMessage": "An error occurred. Please try again."
+    },
+    "data_alter": {}
+  },
+  "DOCUMENT_VALIDATION_RULES": {
+    "ticket_code": "F20-10004",
+    "enabled": true,
+    "editable_with_cookies": true,
+    "data": {
+      "allowedFileTypes": [
+        "jpg",
+        "png",
+        "pdf"
+      ],
+      "maxFileSizeMB": 5,
+      "rejectReasonSimilarityThreshold": 0.85,
+      "autoSuggestFix": true
+    },
+    "data_alter": {}
+  },
+  "RESPONSE_MESSAGES": {
+    "ticket_code": "F20-10005",
+    "enabled": true,
+    "editable_with_cookies": false,
+    "data": {
+      "login": {
+        "POST": {
+          "200": {
+            "message": "Login successful.",
+            "description": "User is authenticated and session is established."
+          },
+          "400": {
+            "message": "Invalid credentials.",
+            "description": "The username or password is incorrect."
+          },
+          "401": {
+            "message": "Unauthorized.",
+            "description": "Login failed due to missing or invalid authentication details."
+          },
+          "429": {
+            "message": "Too many login attempts.",
+            "description": "Account temporarily locked due to repeated failed attempts."
+          },
+          "500": {
+            "message": "Server error.",
+            "description": "Unexpected error occurred while processing login."
+          }
+        }
+      },
+      "profile": {
+        "GET": {
+          "200": {
+            "message": "Profile retrieved successfully.",
+            "description": "The user's profile data has been returned."
+          },
+          "401": {
+            "message": "Unauthorized.",
+            "description": "You must be logged in to view profile data."
+          },
+          "404": {
+            "message": "Profile not found.",
+            "description": "The requested user profile does not exist."
+          },
+          "500": {
+            "message": "Server error.",
+            "description": "An error occurred while retrieving the profile."
+          }
+        },
+        "PUT": {
+          "200": {
+            "message": "Profile updated successfully.",
+            "description": "The profile data was updated."
+          },
+          "400": {
+            "message": "Invalid data.",
+            "description": "One or more fields failed validation."
+          },
+          "401": {
+            "message": "Unauthorized.",
+            "description": "You must be logged in to update your profile."
+          },
+          "500": {
+            "message": "Server error.",
+            "description": "An error occurred while updating profile data."
+          }
+        }
+      },
+      "orders": {
+        "GET": {
+          "200": {
+            "message": "Orders retrieved successfully.",
+            "description": "The list of orders is returned."
+          },
+          "204": {
+            "message": "No orders found.",
+            "description": "The user has no orders to display."
+          },
+          "401": {
+            "message": "Unauthorized.",
+            "description": "Login required to access order data."
+          },
+          "500": {
+            "message": "Server error.",
+            "description": "An error occurred while fetching orders."
+          }
+        },
+        "POST": {
+          "201": {
+            "message": "Order created successfully.",
+            "description": "A new order has been placed."
+          },
+          "400": {
+            "message": "Invalid order data.",
+            "description": "The request body contained invalid or incomplete data."
+          },
+          "401": {
+            "message": "Unauthorized.",
+            "description": "You must be logged in to place an order."
+          },
+          "422": {
+            "message": "Unprocessable entity.",
+            "description": "Validation failed, some fields are invalid."
+          },
+          "500": {
+            "message": "Server error.",
+            "description": "An error occurred while creating the order."
+          }
+        }
+      },
+      "payments": {
+        "POST": {
+          "200": {
+            "message": "Payment processed successfully.",
+            "description": "The payment has been confirmed and recorded."
+          },
+          "400": {
+            "message": "Invalid payment request.",
+            "description": "The payment payload is invalid."
+          },
+          "401": {
+            "message": "Unauthorized.",
+            "description": "You must be logged in to perform payment."
+          },
+          "402": {
+            "message": "Payment required.",
+            "description": "Payment failed due to insufficient funds."
+          },
+          "500": {
+            "message": "Server error.",
+            "description": "The server could not complete the payment."
+          }
+        }
+      }
+    },
+    "data_alter": {}
+  },
+  "LARGE_FORM_OPTIONS": {
+    "ticket_code": "F20-10006",
+    "enabled": true,
+    "editable_with_cookies": false,
+    "data": {
+      "productCategories": [
+        {
+          "id": "electronics",
+          "label": "Electronics"
+        },
+        {
+          "id": "fashion",
+          "label": "Fashion & Apparel"
+        },
+        {
+          "id": "home_garden",
+          "label": "Home & Garden"
+        },
+        {
+          "id": "sports",
+          "label": "Sports & Outdoors"
+        },
+        {
+          "id": "beauty",
+          "label": "Beauty & Personal Care"
+        },
+        {
+          "id": "toys",
+          "label": "Toys & Games"
+        },
+        {
+          "id": "books",
+          "label": "Books & Stationery"
+        },
+        {
+          "id": "automotive",
+          "label": "Automotive"
+        },
+        {
+          "id": "groceries",
+          "label": "Groceries"
+        },
+        {
+          "id": "health",
+          "label": "Health & Wellness"
+        },
+        {
+          "id": "music",
+          "label": "Music & Instruments"
+        },
+        {
+          "id": "pet_supplies",
+          "label": "Pet Supplies"
+        },
+        {
+          "id": "office",
+          "label": "Office & Productivity"
+        }
+      ],
+      "industries": [
+        {
+          "id": "it",
+          "label": "Information Technology"
+        },
+        {
+          "id": "finance",
+          "label": "Finance & Banking"
+        },
+        {
+          "id": "education",
+          "label": "Education"
+        },
+        {
+          "id": "healthcare",
+          "label": "Healthcare"
+        },
+        {
+          "id": "manufacturing",
+          "label": "Manufacturing"
+        },
+        {
+          "id": "agriculture",
+          "label": "Agriculture"
+        },
+        {
+          "id": "retail",
+          "label": "Retail"
+        },
+        {
+          "id": "transport",
+          "label": "Transportation & Logistics"
+        },
+        {
+          "id": "energy",
+          "label": "Energy & Utilities"
+        },
+        {
+          "id": "construction",
+          "label": "Construction"
+        },
+        {
+          "id": "government",
+          "label": "Government"
+        },
+        {
+          "id": "media",
+          "label": "Media & Entertainment"
+        }
+      ],
+      "countries": [
+        {
+          "code": "US",
+          "name": "United States"
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia"
+        },
+        {
+          "code": "JP",
+          "name": "Japan"
+        },
+        {
+          "code": "CN",
+          "name": "China"
+        },
+        {
+          "code": "IN",
+          "name": "India"
+        },
+        {
+          "code": "DE",
+          "name": "Germany"
+        },
+        {
+          "code": "FR",
+          "name": "France"
+        },
+        {
+          "code": "GB",
+          "name": "United Kingdom"
+        },
+        {
+          "code": "BR",
+          "name": "Brazil"
+        },
+        {
+          "code": "ZA",
+          "name": "South Africa"
+        },
+        {
+          "code": "AU",
+          "name": "Australia"
+        },
+        {
+          "code": "CA",
+          "name": "Canada"
+        },
+        {
+          "code": "MX",
+          "name": "Mexico"
+        },
+        {
+          "code": "RU",
+          "name": "Russia"
+        },
+        {
+          "code": "SA",
+          "name": "Saudi Arabia"
+        },
+        {
+          "code": "NG",
+          "name": "Nigeria"
+        }
+      ],
+      "currencies": [
+        {
+          "code": "USD",
+          "name": "US Dollar"
+        },
+        {
+          "code": "EUR",
+          "name": "Euro"
+        },
+        {
+          "code": "JPY",
+          "name": "Japanese Yen"
+        },
+        {
+          "code": "GBP",
+          "name": "British Pound"
+        },
+        {
+          "code": "IDR",
+          "name": "Indonesian Rupiah"
+        },
+        {
+          "code": "CNY",
+          "name": "Chinese Yuan"
+        },
+        {
+          "code": "INR",
+          "name": "Indian Rupee"
+        },
+        {
+          "code": "AUD",
+          "name": "Australian Dollar"
+        },
+        {
+          "code": "CAD",
+          "name": "Canadian Dollar"
+        },
+        {
+          "code": "BRL",
+          "name": "Brazilian Real"
+        },
+        {
+          "code": "ZAR",
+          "name": "South African Rand"
+        },
+        {
+          "code": "CHF",
+          "name": "Swiss Franc"
+        },
+        {
+          "code": "KRW",
+          "name": "South Korean Won"
+        },
+        {
+          "code": "SAR",
+          "name": "Saudi Riyal"
+        }
+      ],
+      "languages": [
+        {
+          "code": "en",
+          "label": "English"
+        },
+        {
+          "code": "id",
+          "label": "Bahasa Indonesia"
+        },
+        {
+          "code": "ja",
+          "label": "Japanese"
+        },
+        {
+          "code": "zh",
+          "label": "Chinese"
+        },
+        {
+          "code": "hi",
+          "label": "Hindi"
+        },
+        {
+          "code": "es",
+          "label": "Spanish"
+        },
+        {
+          "code": "fr",
+          "label": "French"
+        },
+        {
+          "code": "de",
+          "label": "German"
+        },
+        {
+          "code": "ar",
+          "label": "Arabic"
+        },
+        {
+          "code": "pt",
+          "label": "Portuguese"
+        },
+        {
+          "code": "ru",
+          "label": "Russian"
+        },
+        {
+          "code": "ko",
+          "label": "Korean"
+        }
+      ]
+    },
+    "data_alter": {}
+  },
+  "SUBJECT_ACCESS_REQUEST": {
+    "ticket_code": "F20-10007",
+    "enabled": false,
+    "editable_with_cookies": false,
+    "data": {
+      "profileFields": {
+        "fullName": true,
+        "email": true,
+        "phoneNumber": true,
+        "address": false
+      }
+    },
+    "data_alter": {}
+  }
+}
