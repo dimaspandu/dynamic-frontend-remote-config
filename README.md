@@ -34,6 +34,22 @@ The configuration fetched by the app (either editable by cookies or not) can be 
 ![JWT decoding demo 2](./doc/screenshot-2.png)
 ![JWT decoding demo 3](./doc/screenshot-3.png)
 
+## Diagrams
+
+The following diagrams illustrate how the Dynamic Frontend Remote Config works across different environments and flows:
+
+### Activity Diagram
+![Activity Diagram](./doc/dfrc.activity.diagram.png)
+
+### Sequence Diagram
+![Sequence Diagram](./doc/dfrc.sequence.diagram.png)
+
+### Use Case Diagram
+![Use Case Diagram](./doc/dfrc.use-case.diagram.png)
+
+### High-Level Architecture
+![High-Level Architecture](./doc/dfrc.high-level-architecture.diagram.png)
+
 ## Development
 
 Generate a local remote config file and start the dev server:
