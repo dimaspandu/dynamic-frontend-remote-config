@@ -1,21 +1,22 @@
 # Dynamic Frontend Remote Config
 
-This project is a **Next.js 15** application designed to demonstrate **dynamic frontend remote configuration**.  
-Instead of hardcoding configuration values, the app fetches a JSON config file from an object storage (e.g. Google Cloud Storage, AWS S3, etc.) at runtime.  
+This project is a **Next.js 15** application designed to demonstrate **dynamic frontend remote configuration**.
+Instead of hardcoding configuration values, the app fetches a JSON config file from an object storage (e.g. Google Cloud Storage, AWS S3, etc.) at runtime.
 
 ## Features
-- Built with **Next.js 15 + React 19**  
-- Remote configuration served via **object storage** or **CDN**  
-- Development mode generates local `remote-config.json` for testing  
-- Supports **JWT-based authentication helpers** (`jwt-decode`, `jwt-encode`)  
-- Docker-ready for production deployments  
+
+* Built with **Next.js 15 + React 19**
+* Remote configuration served via **object storage** or **CDN**
+* Development mode generates local `remote-config.json` for testing
+* Supports **JWT-based authentication helpers** (`jwt-decode`, `jwt-encode`)
+* Docker-ready for production deployments
 
 ## Live Demo
 
 You can try out the live demo of the remote configuration feature:
 
-- [Live demo of the configuration](https://dynamic-frontend-remote-config.netlify.app/)
-- [Demo with disabled feature](https://dynamic-frontend-remote-config.netlify.app/subject-access-request)
+* [Live demo of the configuration](https://dynamic-frontend-remote-config.netlify.app/)
+* [Demo with disabled feature](https://dynamic-frontend-remote-config.netlify.app/subject-access-request)
 
 These links demonstrate the dynamic configuration in action, including the features controlled by remote configuration settings.
 
@@ -24,6 +25,7 @@ These links demonstrate the dynamic configuration in action, including the featu
 The configuration fetched by the app (either editable by cookies or not) can be observed directly in the browser's **Network** tab under the request for `config`. You can also inspect the cookies used for storing remote configuration values.
 
 ### Steps to Decode JWT:
+
 1. Open your browser's Developer Tools (e.g., right-click → "Inspect" → go to the **Application** or **Network** tab).
 2. Look for the `config` request or inspect cookies.
 3. Copy the JWT string (it will look like a long string of characters).
@@ -39,16 +41,24 @@ The configuration fetched by the app (either editable by cookies or not) can be 
 The following diagrams illustrate how the Dynamic Frontend Remote Config works across different environments and flows:
 
 ### Activity Diagram
+
 ![Activity Diagram](./doc/dfrc.activity.diagram.png)
 
 ### Sequence Diagram
+
 ![Sequence Diagram](./doc/dfrc.sequence.diagram.png)
 
 ### Use Case Diagram
+
 ![Use Case Diagram](./doc/dfrc.use-case.diagram.png)
 
 ### High-Level Architecture
+
 ![High-Level Architecture](./doc/dfrc.high-level-architecture.diagram.png)
+
+## Why Remote Config
+
+For a detailed explanation of the benefits, challenges, and concepts behind using Remote Config in frontend development, refer to the document: [doc/why-remote-config.pdf](./doc/why-remote-config.pdf)
 
 ## Development
 
@@ -58,12 +68,12 @@ Generate a local remote config file and start the dev server:
 npm run dev
 ```
 
-This will run `scripts/generate-remote-config.mjs` and place the result inside `/public`.  
-Then you can open [http://localhost:3000](http://localhost:3000).  
+This will run `scripts/generate-remote-config.mjs` and place the result inside `/public`.
+Then you can open [http://localhost:3000](http://localhost:3000).
 
 ## Production Build
 
-Production build does **not** generate a remote config automatically.  
+Production build does **not** generate a remote config automatically.
 The file must be uploaded manually to object storage, and the app will read from the URL provided in the environment variables.
 
 ```bash
@@ -80,10 +90,10 @@ docker run -p 3000:3000   -e NEXT_PUBLIC_REMOTE_CONFIG_URL="https://storage.goog
 
 ## Environment Variables
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `NEXT_PUBLIC_REMOTE_CONFIG_URL` | URL to the remote config JSON | `https://storage.googleapis.com/assets/shinra/remote-config.json` |
-| `NEXT_PUBLIC_REMOTE_CONFIG_KEY` | API key or shared secret for validation | `99pL2U76wgj82nhwrDdWNEGQyTDcRy5j` |
+| Variable                        | Description                             | Example                                                           |
+| ------------------------------- | --------------------------------------- | ----------------------------------------------------------------- |
+| `NEXT_PUBLIC_REMOTE_CONFIG_URL` | URL to the remote config JSON           | `https://storage.googleapis.com/assets/shinra/remote-config.json` |
+| `NEXT_PUBLIC_REMOTE_CONFIG_KEY` | API key or shared secret for validation | `99pL2U76wgj82nhwrDdWNEGQyTDcRy5j`                                |
 
 ## Project Structure
 
